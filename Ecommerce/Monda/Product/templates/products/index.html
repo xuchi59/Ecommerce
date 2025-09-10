@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <h1>
+        Products
+    </h1>
+
+    <ul>
+        {% for category in  categories %}
+    
+        <li><a href="#">{{Categorys.name}}</li>
+
+        {% endfor %}
+    </ul>
+
+
+
+       
+</div>
+
+   
+        <div class="row">
+             {% for product in products %}
+            <div class="card md-3" style="width: 18rem;">
+            <img src="{{product.profile.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.summary}}</p>
+            <a href="#" class="btn btn-primary">Add To Cart</a>
+            </div>
+
+            {% endfor %}
+        </div> 
+    
+</div>
+
+{% endblock content %}
+
+
+
